@@ -1,0 +1,127 @@
+.ds doc-title Evaluation of troff as documentation system
+.ds doc-author Marc Chantreux
+.de h1
+\s+3\f(HB\\$*\fP\s0
+..
+
+.nr default-po \n[.o]
+.pdfinfo /Title \*[doc-title]
+.pdfinfo /Author \*[doc-author]
+.pdfinfo /Subject experiments around groff
+.pdfinfo /Keywords pdf roff typesetting
+
+.po .5c
+.mk
+.ll 12c
+.ft HB
+\s+(15Memorandum\s0
+.br
+.ft H
+\l'12c'
+.br
+\s+3\*[doc-title]\s0
+
+.\" Abstract
+Attempt to write a complete memo with a pretty good page layout without the help of any macros set. if succeed, we should be able to write our macros to maintain (and maybe automate) our documentation.
+
+\s+1by \*[doc-author]\s0
+
+
+.po 13c
+.rt
+.sp -.3i
+\X'pdf: pdfpic renater.pdf -C 150'
+
+
+
+            GIP Renater
+.br
+            Pronum Department
+.br
+            21-23 rue Daviel
+.br
+            75013 PARIS
+
+.po \*[default-po]
+.sp .6i
+.ll 19c
+
+.h1 short term goals
+
+\(bu while learning troff, create pretty good looking document that can be used
+as a demonstration of troff capacities and usage. This is done without the help
+of any existing macro set because we should be able to maintain our own ones.
+however, the possibility to start from the existing \f(CRmm\fP set (available
+in the \f(CRgroff\fP distribution and in the
+.pdfhref W -D https://git.savannah.gnu.org/cgit/groff.git/tree/contrib/mm contrib directory of the source code
+\&.
+.br
+\(bu ensure the required features (internal and external links, embedded visuals, table rendering, code and configuration snippets) are easy enough to be learned by the staff.
+
+.h1 long term goals
+
+\(bu write a macro set (possible name \f(CRren\fP) to hide all the work and ease the the write. as example
+
+.ft CR
+\&.memo Evaluation of troff as documentation system
+.br
+\&.by Marc Chantreux
+
+\&.abstract
+.br
+Attempt to write a complete memo with a pretty good page layout without the help of any macros set. if succeed, we should be able to write our macros to maintain (and maybe automate) our documentation.
+.br
+\&.endabs
+
+\&.h1 example
+
+yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada
+yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada
+yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada
+yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada
+
+.ft
+
+.h1 Currrent state
+
+Good news:
+
+\(bu troff is writen in
+\f(CRperl\fP and
+\f(CRc++\fP so we can be able to hack if needed.
+
+\(bu the \f(CRgroff\fP community is very welcoming.
+
+\(bu the current render looks promising. AFAIK, there is no
+.pdfhref W -D https://en.wikipedia.org/wiki/PGF/TikZ Tikz
+counterpart in the troff world but it's possible to use Tikz to
+create standalone PDF to be embedded in the final document.
+
+\(bu \f(CRroff\fP code is easy to generate so we could explore a \f(CR
+markdown\fP to \f(CRtroff\fP (as \f(CRpandoc\fP writer or \f(CRcmark\fP hack?).
+
+Bad news:
+
+\(bu this layout is completly fake and fragile but shows more or less the expected final result.
+i tried to start from
+.pdfhref W -D https://www.gnu.org/software/groff/manual/groff.html#index-mk the example provided in the \f(CR.mk\fP documentation
+but the flow wasn't what i expected.
+
+\(bu i found no way to add simple break page (as the Latex \f(CR\\\\\fP)
+
+\(bu i don't know how to add a dot (".") after a link without extra spacing.
+
+\(bu the troff support of graphviz was discontinued years ago.
+
+.h1 Current/Comming work
+
+\(bu make the bad news disapear by learning more \f(CRtroff\fP.
+
+\(bu explore the html and tty output (possible colors?).
+
+\(bu improve error messages of \f(CRpdfpic\fP error.
+
+\(bu add a \f(CR2C\fP mode.
+
+\(bu evaluate the possible tunning and improvements of \f(CRmm\fP.
+
