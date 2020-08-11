@@ -1,5 +1,7 @@
 .ds doc-title Evaluation of troff as documentation system
 .ds doc-author Marc Chantreux
+.ds G \f(CRgroff\fP
+.ds R \f(CRroff\fP
 .de h1
 \s+3\f(HB\\$*\fP\s0
 ..
@@ -48,11 +50,11 @@ Attempt to write a complete memo with a pretty good page layout without the help
 
 .h1 short term goals
 
-\(bu while learning troff, create pretty good looking document that can be used
-as a demonstration of troff capacities and usage. This is done without the help
+\(bu while learning \*R, create pretty good looking document that can be used
+as a demonstration of \*R capacities and usage. This is done without the help
 of any existing macro set because we should be able to maintain our own ones.
 however, the possibility to start from the existing \f(CRmm\fP set (available
-in the \f(CRgroff\fP distribution and in the
+in the \*G distribution and in the
 .pdfhref W -D https://git.savannah.gnu.org/cgit/groff.git/tree/contrib/mm contrib directory of the source code
 \&.
 .br
@@ -60,7 +62,7 @@ in the \f(CRgroff\fP distribution and in the
 
 .h1 long term goals
 
-\(bu write a macro set (possible name \f(CRren\fP) to hide all the work and ease the the write. as example
+\(bu write a macro set (possible name \f(CRren\fP) to hide all the work and ease the the write. As example
 
 .ft CR
 \&.memo Evaluation of troff as documentation system
@@ -69,7 +71,7 @@ in the \f(CRgroff\fP distribution and in the
 
 \&.abstract
 .br
-Attempt to write a complete memo with a pretty good page layout without the help of any macros set. if succeed, we should be able to write our macros to maintain (and maybe automate) our documentation.
+Attempt to write a complete memo with a pretty good page layout without the help of any macros set. If succeed, we should be able to write our macros to maintain (and maybe automate) our documentation.
 .br
 \&.endabs
 
@@ -82,15 +84,17 @@ yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada yada
 
 .ft
 
-.h1 Currrent state
+.h1 Current state
 
 Good news:
 
-\(bu troff is writen in
-\f(CRperl\fP and
-\f(CRc++\fP so we can be able to hack if needed.
+\(bu the \*G community is very welcoming.
 
-\(bu the \f(CRgroff\fP community is very welcoming.
+\(bu internals are much more easier to dive in than the TeX one.
+
+\(bu \*G is written in
+\f(CRperl\fP and
+\f(CRc++\fP so we can can contribute if needed.
 
 \(bu the current render looks promising. AFAIK, there is no
 .pdfhref W -D https://en.wikipedia.org/wiki/PGF/TikZ Tikz
@@ -113,7 +117,7 @@ but the flow wasn't what i expected.
 
 \(bu the troff support of graphviz was discontinued years ago.
 
-.h1 Current/Comming work
+.h1 Current/Coming work
 
 \(bu make the bad news disapear by learning more \f(CRtroff\fP.
 
@@ -123,5 +127,11 @@ but the flow wasn't what i expected.
 
 \(bu add a \f(CR2C\fP mode.
 
+\(bu the escape syntax breaks the spellchecker (\f(CR\\f(CRhello\fP gives \fICRhello\fP when \fIhello\fP is expected)
+
 \(bu evaluate the possible tunning and improvements of \f(CRmm\fP.
+
+.h1 Conclusion
+
+We're not ready yet but the first steps looks promising.
 
